@@ -44,6 +44,8 @@ export default {
   created() {
     this.menuSele = this.$route.path;
     let navLanguage = localstorage.fetch("language") || navigator.language;
+    console.log('localstorage.fetch("language"): ', localstorage.fetch("language"));
+    console.log('navigator.language ', navigator.language);
     if (typeof this.$i18n.messages[navLanguage] == "undefined") {
       navLanguage = "en-US";
     }
