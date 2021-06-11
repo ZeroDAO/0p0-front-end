@@ -5,25 +5,29 @@
         {{ $t("page.hello") }}
       </p>
       <p class="t3 regular-text">{{ $t("page.Welcome") }}</p>
-      <a :href="$t('page.light_white_paper_href')" target="_blank" class="primary-a">
+      <a :href="$t('page.light_white_paper_href')" target="_blank">
         <el-button type="primary" round
           ><i class="iconfont">&#xe6a0; </i
-          >{{ $t("page.light_white_paper") }}</el-button>
+          >{{ $t("page.light_white_paper") }}</el-button
+        >
       </a>
 
       <div class="expand">
-        <el-button class="iconfont" type="primary" plain circle
-          >&#xe8d7;</el-button
-        >
-        <el-button class="iconfont" type="primary" plain circle
-          >&#xe62e;</el-button
-        >
-        <el-button class="iconfont" type="primary" plain circle
-          >&#xe60d;</el-button
-        >
-        <el-button class="iconfont" type="primary" plain circle
-          >&#xe64a;</el-button
-        >
+        <a href="https://space.bilibili.com/26392317/" target="_blank">
+          <el-button class="iconfont" type="primary" plain circle
+            >&#xe62e;</el-button
+          >
+        </a>
+        <a href="https://www.huxiu.com/member/2759527.html" target="_blank">
+          <el-button class="iconfont" type="primary" plain circle
+            >&#xe60d;</el-button
+          >
+        </a>
+        <a href="https://github.com/ZeroDAO" target="_blank">
+          <el-button class="iconfont" type="primary" plain circle
+            >&#xe64a;</el-button
+          >
+        </a>
       </div>
     </div>
 
@@ -112,6 +116,11 @@ export default {
 .home {
   button {
     margin-top: 50px;
+  }
+  .expand {
+    a {
+      margin-right: 10px;
+    }
   }
   .actual {
     background: url(../assets/images/bg.png) rgba(4, 19, 105, 0.7) no-repeat
