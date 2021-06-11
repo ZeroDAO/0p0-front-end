@@ -7,6 +7,7 @@ module.exports = {
     'language': 'Language',
     'not_slow':'不算太慢',
     'light_white_paper': '轻白皮书',
+    'light_white_paper_href': 'https://pic.tom24h.com/zerodao/ZeroDAOLightWhitePaper_zh_0.1.pdf',
     'apps_title': '如果你胆小的话，就关上门窗',
     'apps': [
       {

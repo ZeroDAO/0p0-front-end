@@ -4,7 +4,9 @@
       <el-header>
         <el-row class="appbar" type="flex" justify="space-between">
           <el-col span="8">
-            <img class="logo" src="../assets/images/logo.svg" />
+            <router-link to="/">
+              <img class="logo" src="../assets/images/logo.svg" />
+            </router-link>
           </el-col>
           <el-col span="16" class="content">
             <el-dropdown @command="changeLang">

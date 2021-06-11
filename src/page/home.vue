@@ -5,10 +5,12 @@
         {{ $t("page.hello") }}
       </p>
       <p class="t3 regular-text">{{ $t("page.Welcome") }}</p>
-      <el-button type="primary" round
-        ><i class="iconfont">&#xe6a0; </i
-        >{{ $t("page.light_white_paper") }}</el-button
-      >
+      <a :href="$t('page.light_white_paper_href')" target="_blank" class="primary-a">
+        <el-button type="primary" round
+          ><i class="iconfont">&#xe6a0; </i
+          >{{ $t("page.light_white_paper") }}</el-button>
+      </a>
+
       <div class="expand">
         <el-button class="iconfont" type="primary" plain circle
           >&#xe8d7;</el-button
@@ -96,8 +98,8 @@ export default {
   computed: {
     lists() {
       return {
-          timeline: this.$t("page.timeline"),
-          apps: this.$t("page.apps"),
+        timeline: this.$t("page.timeline"),
+        apps: this.$t("page.apps"),
       };
     },
   },
@@ -112,7 +114,7 @@ export default {
     margin-top: 50px;
   }
   .actual {
-    background: url(../assets/images/bg.jpg) rgba(4, 19, 105, 0.7) no-repeat
+    background: url(../assets/images/bg.png) rgba(4, 19, 105, 0.7) no-repeat
       center center;
     background-attachment: fixed;
     background-blend-mode: multiply;

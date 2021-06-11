@@ -8,6 +8,7 @@ module.exports = {
         'not_slow':'Not Too Slow',
         'light_white_paper': 'Light White Paper',
         'apps_title': 'If you are timid, close the doors and windows',
+        'light_white_paper_href': 'https://pic.tom24h.com/zerodao/ZeroDAOLightWhitePaper_0.1.pdf',
         'apps': [
             {
               title: 'Zero-coss Payment',
