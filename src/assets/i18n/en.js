@@ -1,14 +1,66 @@
 module.exports = {
     page:{
-        'hello': 'Hello, Pathfinder_',
-        'Welcome': 'Welcome to be the first generation of blockchain original residents',
+        'home': 'Home',
+        'learn': 'Learn',
+        'guide': 'Guide',
+        'hello': 'User-friendly Web3',
+        'Welcome': 'Reputation System | Social Networks | DAOs',
         'reputation':'Decentralized Reputation System',
         'networking':'Next Generation Social Networking',
         'language' : '选择语言',
         'not_slow':'Not Too Slow',
-        'light_white_paper': 'Light White Paper',
+        'light_paper': 'Light Paper',
+        'light_paper_href': 'https://pic.tom24h.com/zerodao/m/ZeroDAOLightPaper.pdf',
+        'technical_white_paper': 'Technical White Paper',
+        'technical_white_paper_href': 'https://pic.tom24h.com/zerodao/m/ZeroDAO_technical_white_paper.pdf',
         'apps_title': 'If you are timid, close the doors and windows',
-        'light_white_paper_href': 'https://pic.tom24h.com/zerodao/ZeroDAOLightWhitePaper_0.1.pdf',
+        'cards': [
+            {
+              title: 'Decentralised reputation systems',
+              more: 'https://docs.zerodao.net/learn/reputation/',
+              tests: [
+                'Decentralised, high availability reputation system',
+                'Revolutionising Web3 applications',
+              ]
+            },
+            {
+              title: 'TIR algorithm',
+              more: 'https://docs.zerodao.net/learn/reputation/tir/',
+              tests: [
+                'TIR algorithm against Sybil Attack',
+                'Maths level security',
+                'Robot ≠ Human',
+              ]
+            },
+            {
+              title: 'ICSC',
+              more: 'https://docs.zerodao.net/learn/social-finance/social-currency/',
+              tests: [
+                'We used to share information, now we share value',
+                'Incentive compatibility social currency',
+                'More solid social finance',
+              ]
+            },
+            {
+              title: 'Resilient DAOs Networks',
+              more: 'https://docs.zerodao.net/learn/',
+              tests: [
+                'Building a DAO is as easy as pulling a group',
+                'Rich expandability',
+              ]
+            },
+          ],
+        'ecology': {
+          'storage': 'Decentralised Storage',
+          'reputation': 'Reputation & Credit',
+          'social_protocols': 'Social protocols',
+          'reputation_system': 'Reputation System',
+          'application_layer': 'Application layer',
+          'public_infrastructure_layer': 'Public infrastructure layer',
+          'basic_protocol_layer': 'Basic protocol layer',
+          'service': 'The ecological architecture of the service Web3',
+          'beginning': 'This is just the beginning',
+        },
         'apps': [
             {
               title: 'Zero-coss Payment',
@@ -49,44 +101,46 @@ module.exports = {
           ],
           'timeline': [
             {
-              title: 'Proof-of-Concept MVP',
-              text: 'Validate project feasibility and algorithm effectiveness.',
-              timestamp: '2021 Q2',
+              title: 'MVP',
+              subtitle:'Verify',
+              text: 'Verify the feasibility of the project and the effect of the algorithm, and briefly describe the network architecture',
+              timestamp: '2021',
+              quarterly: 'Q2'
             },
             {
-              title: 'Release of light white paper',
-              text: 'Brief description of the product and ecology.',
-              timestamp: '2021 Q2',
+              title: 'Sky garden',
+              subtitle:'test network',
+              text: 'Alpha test network, including the core TIR algorithm and reputation system, and finally iterated to the full version',
+              timestamp: '2021',
+              quarterly: 'Q4'
             },
             {
-              title: 'Alpha Network',
-              text: 'Start Alpha network without elections.',
-              timestamp: '2021 Q3',
+              title: 'Greate navigation',
+              subtitle:'test network',
+              text: 'Support the core capabilities of the DAO network and serve as the main test network',
+              timestamp: '2021',
+              quarterly: 'Q4'
             },
             {
-              title: 'Beta Network',
-              text: 'Fully functional test network.',
-              timestamp: '2021 Q4',
+              title: 'Mobile palace',
+              subtitle:'ecolofical upgrade',
+              text: 'Simulate scenarios on the chain, conduct rapid feasibility verification of multi-domain applications, and conduct on-chain testing and development',
+              timestamp: '2021',
+              quarterly: 'Q4'
             },
             {
-              title: 'Off-chain and Layer2',
-              text: 'Meet fast verification and off-chain requirements',
-              timestamp: '2022 Q1',
+              title: 'Main network',
+              subtitle:'online',
+              text: 'Complete support for smart contracts, reputation systems and DAOs',
+              timestamp: '2022',
+              quarterly: 'Q1'
             },
             {
-              title: 'Radical Social Network',
-              text: 'Dapp as a core application.',
-              timestamp: '2022 Q1',
-            },
-            {
-              title: 'Main Online',
-              text: 'Main Network officially launched.',
-              timestamp: '2022 Q2',
-            },
-            {
-              title: 'Privacy Network',
-              text: 'Launching stateless blockchain development to meet credit finance needs.',
-              timestamp: '2022 Q4',
+              title: 'Star Wanderer',
+              subtitle:'main network',
+              text: 'Upgrade the cross-chain capability of the main network',
+              timestamp: '2022',
+              quarterly: 'Q1'
             },
           ]
     }

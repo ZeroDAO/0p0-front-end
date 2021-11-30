@@ -1,26 +1,15 @@
-/* 改变主题色变量 */
-$--color-primary: #002FA7;
-$--color-success: #67C23A;
-$--color-adorn: #e00e5f;
-$--text-primary: #424346;
-$--text-second: #79797C;
-$--text-minor: #DCDFE6;
-$--daff-normal: 1.5em;
-$--bg-success: #4B64F8;
-$--bg-dark: #333333;
-$--bg-dark-second: #3D3C3C;
-$--title-mub: #333335;
+$--color-primary: #0025FF;
 
 /* 改变 icon 字体路径变量，必需 */
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 @import "~element-ui/packages/theme-chalk/src/index";
+@import "./colors.scss";
 
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #FFFFFF;
     color: $--text-primary;
 }
 
@@ -31,9 +20,13 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 .primary-a {
   color: $--text-primary;
   &:hover {
-    background-color: $--color-primary;
-    color: #FFF;
+    background-color: $--color-primary !important;
+    color: #FFF !important;
   }
+}
+
+.white {
+  color: #FFF;
 }
 
 .primary {
@@ -91,6 +84,7 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 .text-second {
   color: $--text-second;
+  font-size: .8em;
 }
 
 .text-lable {

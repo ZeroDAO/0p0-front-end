@@ -9,23 +9,154 @@
             </router-link>
           </el-col>
           <el-col span="16" class="content">
-            <el-dropdown @command="changeLang">
-              <span class="el-dropdown-link">
-                <i class="iconfont icon-yuyan"></i>
-                {{ $t("page.language") }}
-              </span>
-              <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item command="zh-CN">中文</el-dropdown-item>
-                <el-dropdown-item command="en-US">English</el-dropdown-item>
-              </el-dropdown-menu>
-            </el-dropdown>
+            <ul class="nav hidden-xs-only">
+              <el-link
+                type="primary"
+                class="primary-a"
+                href="./"
+                >Home</el-link
+              >
+              <el-link
+                target="_blank"
+                type="primary"
+                class="primary-a"
+                href="https://docs.zerodao.net/learn/"
+                >{{ $t("page.learn") }}</el-link
+              >
+              <el-link
+                target="_blank"
+                type="primary"
+                class="primary-a"
+                href="https://docs.zerodao.net/guide/"
+                >{{ $t("page.guide") }}</el-link
+              >
+              <el-dropdown @command="changeLang">
+                <span class="el-dropdown-link">
+                  <i class="iconfont icon-yuyan"></i>
+                  {{ $t("page.language") }}
+                </span>
+                <el-dropdown-menu slot="dropdown">
+                  <el-dropdown-item command="zh-CN">中文</el-dropdown-item>
+                  <el-dropdown-item command="en-US">English</el-dropdown-item>
+                </el-dropdown-menu>
+              </el-dropdown>
+            </ul>
+            <span
+              @click="drawer = true"
+              class="hidden-sm-and-up iconfont menu white"
+            >
+              <i class="iconfont icon-caidan-2"></i>
+            </span>
           </el-col>
         </el-row>
       </el-header>
 
+      <el-drawer
+        size="60%"
+        custom-class="drawer"
+        title="nav"
+        :visible.sync="drawer"
+        :with-header="false"
+      >
+        <img class="logo" src="../assets/images/logo.svg" />
+        <div @click="drawer = false">
+          <el-link
+            target="_blank"
+            type="primary"
+            href="https://docs.zerodao.net/learn/"
+            >{{ $t("page.learn") }}</el-link
+          >
+        </div>
+        <el-divider></el-divider>
+        <div @click="drawer = false">
+          <el-link
+            target="_blank"
+            type="primary"
+            href="https://docs.zerodao.net/guide/"
+            >{{ $t("page.guide") }}</el-link
+          >
+        </div>
+        <el-divider></el-divider>
+        <el-dropdown @command="changeLang">
+          <span class="el-dropdown-link">
+            <i class="iconfont icon-yuyan"></i>
+            {{ $t("page.language") }}
+          </span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item command="zh-CN">中文</el-dropdown-item>
+            <el-dropdown-item command="en-US">English</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </el-drawer>
+
       <el-main>
         <router-view></router-view>
       </el-main>
+      <el-footer>
+        <div class="footer-content">
+          <div>
+            <img src="../assets/images/logo-ui.svg" />
+            <p class="text-second">© 2020-2021 ZeroDAO</p>
+            <div class="icon-buttons hidden-xs-only">
+              <a href="https://twitter.com/zerodaonet" target="_blank">
+                <el-button class="iconfont" type="primary" circle
+                  >&#xe65f;</el-button
+                >
+              </a>
+              <a href="https://zerodao.medium.com/" target="_blank">
+                <el-button class="iconfont" type="primary" circle
+                  >&#xe6c9;</el-button
+                >
+              </a>
+              <a href="https://discord.gg/K56C6jtr" target="_blank">
+                <el-button class="iconfont" type="primary" circle
+                  >&#xe923;</el-button
+                >
+              </a>
+              <a href="https://github.com/ZeroDAO" target="_blank">
+                <el-button class="iconfont" type="primary" circle
+                  >&#xe64a;</el-button
+                >
+              </a>
+            </div>
+          </div>
+          <div class="footer-right">
+            <div class="footer-nav hidden-xs-only">
+              <span class="footer-nav-title">{{ $t("page.home") }}</span>
+              <el-link :href="$t('page.light_paper_href')" target="_blank">{{
+                $t("page.light_paper")
+              }}</el-link>
+              <el-link
+                :href="$t('page.technical_white_paper_href')"
+                target="_blank"
+                >{{ $t("page.technical_white_paper") }}</el-link
+              >
+            </div>
+            <div class="icon-buttons hidden-sm-and-up">
+              <a href="https://twitter.com/zerodaonet" target="_blank">
+                <el-button class="iconfont" type="primary" circle
+                  >&#xe65f;</el-button
+                >
+              </a>
+              <a href="https://zerodao.medium.com/" target="_blank">
+                <el-button class="iconfont" type="primary" circle
+                  >&#xe6c9;</el-button
+                >
+              </a>
+              <a href="https://discord.gg/K56C6jtr" target="_blank">
+                <el-button class="iconfont" type="primary" circle
+                  >&#xe923;</el-button
+                >
+              </a>
+              <a href="https://github.com/ZeroDAO" target="_blank">
+                <el-button class="iconfont" type="primary" circle
+                  >&#xe64a;</el-button
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </el-footer>
     </el-container>
   </div>
 </template>
@@ -39,13 +170,12 @@ export default {
     return {
       apps: [[]],
       chaTime: "",
+      drawer: false,
     };
   },
   created() {
     this.menuSele = this.$route.path;
     let navLanguage = localstorage.fetch("language") || navigator.language;
-    console.log('localstorage.fetch("language"): ', localstorage.fetch("language"));
-    console.log('navigator.language ', navigator.language);
     if (typeof this.$i18n.messages[navLanguage] == "undefined") {
       navLanguage = "en-US";
     }
@@ -62,6 +192,44 @@ export default {
 <style lang="less">
 body {
   margin: 0;
+  background-color: #7153e7;
+}
+.el-header {
+  background-color: #f9faff;
+}
+.el-footer {
+  background-color: #eefdff;
+  background-image: linear-gradient(119deg, #eefdff 0%, #fbf7ff 99%);
+  height: auto !important;
+  padding: 20px;
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1024px;
+    margin: auto;
+    .footer-nav {
+      display: flex;
+      flex-flow: column;
+      text-align: left;
+      .footer-nav-title {
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      a,
+      span {
+        text-align: left;
+        margin-top: 5px;
+        justify-content: left;
+      }
+    }
+    img {
+      width: 120px;
+    }
+  }
+
+  .icon-buttons {
+    margin-top: 30px;
+  }
 }
 .t1 {
   font-size: 3em;
@@ -82,6 +250,10 @@ body {
   font-size: 1.5em;
 }
 
+.t4 {
+  font-size: 1.2em;
+}
+
 .el-button--text {
   span {
     color: #303133;
@@ -99,33 +271,41 @@ body {
         margin: auto 1em;
       }
     }
+    .menu {
+      .iconfont {
+        font-size: 20px;
+      }
+    }
+    .nav {
+      a {
+        font-size: 18px;
+        line-height: 26px;
+        color: #fff;
+      }
+    }
+  }
+  .el-drawer__body {
+    text-align: right;
+    a {
+      font-size: 26px;
+      margin-right: 15px;
+      color: #fff;
+    }
+    img {
+      margin: 15px 15px 25px auto;
+    }
+    .el-dropdown {
+      margin-right: 15px;
+    }
   }
   .pioneer {
-    width: 100%;
     text-align: center;
     overflow: hidden;
-    p:nth-child(1) {
+    .title {
+      color: #000;
       margin-top: 2em;
-    }
-    p:nth-child(2) {
-      margin-top: -1.5em;
-    }
-    p:nth-child(3) {
-      margin-top: 5em;
-      margin-bottom: 0;
-    }
-    p:nth-child(4) {
-      font-size: 8em;
-      margin: 0;
-      font-family: Daff;
-      line-height: 1em;
-    }
-    p:nth-child(5) {
-      margin-top: 0;
-    }
-
-    .expand {
-      margin: 9em auto;
+      background: url(../assets/images/line.svg) no-repeat center center;
+      background-size: 400px;
     }
   }
 
@@ -162,16 +342,6 @@ body {
 </style>
 <style lang="scss">
 @font-face {
-  font-family: "iconfont"; /* Project id 1537408 */
-  src: url("//at.alicdn.com/t/font_1537408_ygw7g19s6ks.woff2?t=1623327981937")
-      format("woff2"),
-    url("//at.alicdn.com/t/font_1537408_ygw7g19s6ks.woff?t=1623327981937")
-      format("woff"),
-    url("//at.alicdn.com/t/font_1537408_ygw7g19s6ks.ttf?t=1623327981937")
-      format("truetype");
-}
-
-@font-face {
   font-family: "ColorTube";
   src: url(../assets/css/ColorTube-2.otf);
 }
@@ -203,8 +373,11 @@ body {
 }
 
 .logo {
-  height: 60px;
+  height: 40px;
   width: auto;
+}
+.el-header {
+  background-color: transparent !important;
 }
 .fault-text {
   position: relative;
@@ -241,7 +414,7 @@ body {
 }
 
 .el-main {
-  margin: 0;
+  margin: -60px 0 0 0;
   padding: 0;
 }
 </style>
