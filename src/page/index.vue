@@ -108,7 +108,7 @@
                   >&#xe6c9;</el-button
                 >
               </a>
-              <a href="https://discord.gg/K56C6jtr" target="_blank">
+              <a href="https://discord.gg/cFkK7vZxVq" target="_blank">
                 <el-button class="iconfont" type="primary" circle
                   >&#xe923;</el-button
                 >
@@ -143,7 +143,7 @@
                   >&#xe6c9;</el-button
                 >
               </a>
-              <a href="https://discord.gg/K56C6jtr" target="_blank">
+              <a href="https://discord.gg/cFkK7vZxVq" target="_blank">
                 <el-button class="iconfont" type="primary" circle
                   >&#xe923;</el-button
                 >
