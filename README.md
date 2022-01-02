@@ -1,3 +1,3 @@
-## 0p0.org front-end
+## zerodao.net front-end
 
-[https://www.0p0.org/](https://www.0p0.org/)
+[https://zerodao.net/](https://zerodao.net/)
