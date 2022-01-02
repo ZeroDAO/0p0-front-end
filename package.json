@@ -1,5 +1,5 @@
 {
-  "name": "socircles-ui",
+  "name": "www.zerodao.net",
   "version": "1.0.0",
   "description": "ZeroDAO",
   "author": "Daqin Lee <xiuerdwy@gmail.com>",
@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "deploy": "node build/build.js && bash scripts/deploy-gh.sh GH=1"
   },
   "dependencies": {
     "@better-scroll/core": "^2.4.2",
